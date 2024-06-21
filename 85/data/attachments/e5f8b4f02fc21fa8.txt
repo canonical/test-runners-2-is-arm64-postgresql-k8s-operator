@@ -1,0 +1,70 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model microk8s-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:jammy/postgresql-k8s-0
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [allocating] waiting: installing agent
+  postgresql-k8s/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [allocating] waiting: installing agent
+  postgresql-k8s/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [allocating] waiting: installing agent
+  postgresql-k8s/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [allocating] waiting: installing agent
+  postgresql-k8s/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [allocating] waiting: installing agent
+  postgresql-k8s/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] maintenance: installing charm software
+  postgresql-k8s/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] maintenance: installing charm software
+  postgresql-k8s/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] maintenance: installing charm software
+  postgresql-k8s/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] waiting: awaiting for cluster to start
+  postgresql-k8s/1 [idle] unknown: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/1 [idle] unknown: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/1 [idle] unknown: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/1 [executing] unknown: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/1 [executing] unknown: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/1 [executing] unknown:
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  22:13:13Z
+
+App             Version  Status  Scale  Charm           Channel  Rev  Address        Exposed  Message
+postgresql-k8s  14.11    error       2  postgresql-k8s             0  10.152.183.53  no       hook failed: "database-peers-relation-joined"
+
+Unit               Workload  Agent  Address       Ports  Message
+postgresql-k8s/0*  error     idle   10.1.226.202         hook failed: "database-peers-relation-joined"
+postgresql-k8s/1   unknown   idle   10.1.226.203         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-0: 22:08:10 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-1: 22:08:15 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-0: 22:08:15 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-1: 22:08:19 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-0: 22:08:20 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-1: 22:08:24 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-0: 22:08:27 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-1: 22:08:30 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-0: 22:08:34 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+unit-postgresql-k8s-1: 22:08:37 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [81af1a] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.26:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

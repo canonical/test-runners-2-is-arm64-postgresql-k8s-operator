@@ -1,0 +1,113 @@
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+  postgresql-test-app/0 [executing] active: 
+  postgresql-test-app2/0 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] blocked: Failed to initialize db relation
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  23:12:01Z
+
+App                   Version  Status   Scale  Charm                Channel  Rev  Address         Exposed  Message
+postgresql-k8s        14.11    waiting      3  postgresql-k8s                  0  10.152.183.132  no       installing agent
+postgresql-test-app            active       1  postgresql-test-app  edge     155  10.152.183.238  no       
+postgresql-test-app2           active       1  postgresql-test-app  edge     155  10.152.183.53   no       
+
+Unit                     Workload  Agent  Address      Ports  Message
+postgresql-k8s/0*        blocked   idle   10.1.248.75         Failed to initialize db relation
+postgresql-k8s/1         active    idle   10.1.248.77         
+postgresql-k8s/2         active    idle   10.1.248.76         Primary
+postgresql-test-app2/0*  active    idle   10.1.248.79         
+postgresql-test-app/0*   active    idle   10.1.248.78         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-2: 22:06:33 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a49380] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-1: 22:06:35 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a49380] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-0: 22:06:36 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a49380] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-2: 22:25:33 ERROR unit.postgresql-k8s/2.juju-log db:5: ERROR - `extensions` (unaccent, pg_trgm) cannot be requested through relations - Please enable extensions through `juju config` and add the relation again.
+unit-postgresql-k8s-0: 22:29:15 ERROR unit.postgresql-k8s/0.juju-log db:7: Failed to create user: connection to server at "postgresql-k8s-primary.test.svc.cluster.local" (10.152.183.206), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+unit-postgresql-k8s-0: 22:29:49 ERROR unit.postgresql-k8s/0.juju-log db:7: Failed to create user: connection to server at "postgresql-k8s-primary.test.svc.cluster.local" (10.152.183.206), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
