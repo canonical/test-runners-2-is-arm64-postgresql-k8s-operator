@@ -25,12 +25,12 @@ jobs:
     uses: canonical/data-platform-workflows/.github/workflows/integration_test_charm.yaml@test-runners-2
     with:
       artifact-prefix: ${{ needs.build.outputs.artifact-prefix }}
-      architecture: amd64
+      architecture: arm64
       cloud: microk8s
       microk8s-snap-channel: 1.31-strict/stable  # renovate: latest microk8s
       juju-agent-version: 3.4.5
       _beta_allure_report: true
-      _default-runner: '["self-hosted", "linux", "X64", "large", "jammy"]'
+      _default-runner: '["self-hosted", "linux", "ARM64", "large", "jammy"]'
     secrets:
       integration-test: |
         {
