@@ -1,0 +1,276 @@
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:158 starting continuous writes to the database
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:162 checking whether writes are increasing
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:165 Get leader unit
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:171 Run pre-upgrade-check action
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:171 Run pre-upgrade-check action
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:187 Inject dependency fault
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:192 Refresh the charm
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:195 Get first upgrading unit
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:199 Wait for upgrade to fail on first upgrading unit
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:206 Ensure continuous_writes while in failure state on remaining units
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-0 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-0 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-0 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.219:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:209 Re-run pre-upgrade-check action
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:213 Re-refresh the charm
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  02:02:27Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-k8s       14.11    waiting      3  postgresql-k8s                      2  10.152.183.138  no       waiting for units to settle down
+postgresql-test-app           waiting      1  postgresql-test-app  latest/edge  167  10.152.183.174  no       installing agent
+
+Unit                    Workload     Agent  Address      Ports  Message
+postgresql-k8s/0        maintenance  idle   10.1.42.145         
+postgresql-k8s/1        maintenance  idle   10.1.42.144         
+postgresql-k8s/2*       active       idle   10.1.42.147         Primary
+postgresql-test-app/0*  active       idle   10.1.42.136         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-1: 01:49:07 ERROR unit.postgresql-k8s/1.juju-log charms.data_platform_libs.v0.upgrade.ClusterNotReadyError - {'message': 'postgresql-k8s/0 needs to be a synchronous standby in order to become the primary before the upgrade process can start - wait 30 seconds for postgresql-k8s/0 to become a synchronous standby and run this action again', 'cause': 'postgresql-k8s/0 needs to be a synchronous standby in order to become the primary before the upgrade process can start', 'resolution': 'wait 30 seconds for postgresql-k8s/0 to become a synchronous standby and run this action again'}
+unit-postgresql-k8s-2: 01:51:12 ERROR unit.postgresql-k8s/2.juju-log charms.data_platform_libs.v0.upgrade.VersionError - {'message': 'Versions incompatible, charm 1 can not be upgraded to 15.0', 'cause': 'Upgrades only supported for specific versions, charm versions satisfying requirement ^15', 'resolution': ''}
+unit-postgresql-k8s-2: 01:55:53 ERROR unit.postgresql-k8s/2.juju-log replication is not healthy
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0xffff9ecd3430>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='postgresql-k8s-1.postgresql-k8s-endpoints', port=8008): Max retries exceeded with url: /replica?lag=16kB (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff9ecd3430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 249, in is_replication_healthy
+    member_status = requests.get(f"{url}/{endpoint}", verify=self._verify)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='postgresql-k8s-1.postgresql-k8s-endpoints', port=8008): Max retries exceeded with url: /replica?lag=16kB (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff9ecd3430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 237, in is_replication_healthy
+    for attempt in Retrying(stop=stop_after_delay(60), wait=wait_fixed(3)):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 437, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 370, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0xffff9edbbc40 state=finished raised ConnectionError>]
+unit-postgresql-k8s-2: 01:57:04 ERROR unit.postgresql-k8s/2.juju-log replication is not healthy
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0xffff9ecd2470>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='postgresql-k8s-1.postgresql-k8s-endpoints', port=8008): Max retries exceeded with url: /replica?lag=16kB (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff9ecd2470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 249, in is_replication_healthy
+    member_status = requests.get(f"{url}/{endpoint}", verify=self._verify)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='postgresql-k8s-1.postgresql-k8s-endpoints', port=8008): Max retries exceeded with url: /replica?lag=16kB (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff9ecd2470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 237, in is_replication_healthy
+    for attempt in Retrying(stop=stop_after_delay(60), wait=wait_fixed(3)):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 437, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 370, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0xffff9edbbb20 state=finished raised ConnectionError>]
+unit-postgresql-k8s-2: 01:58:17 ERROR unit.postgresql-k8s/2.juju-log replication is not healthy
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0xffff9ec76b30>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='postgresql-k8s-2.postgresql-k8s-endpoints', port=8008): Max retries exceeded with url: /cluster (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff9ec76b30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 136, in get_primary
+    r = requests.get(f"{url}/cluster", verify=self._verify, timeout=5)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='postgresql-k8s-2.postgresql-k8s-endpoints', port=8008): Max retries exceeded with url: /cluster (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff9ec76b30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 239, in is_replication_healthy
+    primary = self.get_primary()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 133, in get_primary
+    for attempt in Retrying(stop=stop_after_attempt(len(self._endpoints) + 1)):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 437, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 370, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0xffff9ec772b0 state=finished raised ConnectionError>]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/src/patroni.py", line 237, in is_replication_healthy
+    for attempt in Retrying(stop=stop_after_delay(60), wait=wait_fixed(3)):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 437, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 370, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0xffff9ec779d0 state=finished raised RetryError>]
+unit-postgresql-k8s-2: 01:59:01 ERROR unit.postgresql-k8s/2.juju-log Upgraded unit is not part of the cluster or not healthy
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
