@@ -1,0 +1,19 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:43:17Z
+
+App             Version  Status   Scale  Charm           Channel  Rev  Address        Exposed  Message
+postgresql-k8s  14.11    waiting      3  postgresql-k8s             0  10.152.183.29  no       installing agent
+
+Unit               Workload     Agent      Address      Ports  Message
+postgresql-k8s/0   maintenance  idle       10.1.134.76         stopping charm software
+postgresql-k8s/1*  maintenance  executing  10.1.134.77         (stop) stopping charm software
+postgresql-k8s/2   waiting      idle       10.1.134.75         awaiting for cluster to start
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-1: 01:37:03 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-2: 01:40:13 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

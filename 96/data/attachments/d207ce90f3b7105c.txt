@@ -1,0 +1,13 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:37:36Z
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-cc330aef-f6f4-4f00-87ea-af757e629a12: 01:35:22 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=906": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: read tcp 10.1.197.199:37346->10.152.183.1:443: read: connection reset by peer
+model-cc330aef-f6f4-4f00-87ea-af757e629a12: 01:35:24 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=906": dial tcp 10.152.183.1:443: connect: connection refused
+model-cc330aef-f6f4-4f00-87ea-af757e629a12: 01:35:32 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=906": dial tcp 10.152.183.1:443: connect: connection refused
+model-cc330aef-f6f4-4f00-87ea-af757e629a12: 01:35:43 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=906": dial tcp 10.152.183.1:443: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
