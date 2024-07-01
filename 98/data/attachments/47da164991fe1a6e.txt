@@ -1,0 +1,104 @@
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [idle] active: 
+  postgresql-k8s/0 [idle] active: Primary
+[32mINFO    [0m integration.relations.test_relations:test_relations.py:72  add relation with modern endpoints
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m integration.relations.test_relations:test_relations.py:81  remove relation with legacy endpoints
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [idle] active: 
+  postgresql-k8s/0 [idle] blocked: Please choose one endpoint to use. No need to relate all of them simultaneously!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] maintenance: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] maintenance: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] maintenance: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] maintenance: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] maintenance: stopping charm software
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] maintenance: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [executing] blocked: Please choose one endpoint to use. No need to relate all of them simultaneously!
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:49:49Z
+
+App                  Version  Status   Scale  Charm                Channel  Rev  Address         Exposed  Message
+postgresql-k8s       14.11    waiting      1  postgresql-k8s                  0  10.152.183.18   no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  edge     167  10.152.183.103  no       
+
+Unit                    Workload  Agent  Address       Ports  Message
+postgresql-k8s/0*       error     idle   10.1.134.138         crash loop backoff: back-off 2m40s restarting failed container=postgresql pod=postgresql-k8s-0_test(5eeb1261-084b-4cb...
+postgresql-test-app/0*  active    idle   10.1.134.136         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-0: 01:34:05 ERROR unit.postgresql-k8s/0.juju-log failed to patch k8s Endpoints postgresql-k8s
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/lightkube/core/generic_client.py", line 188, in raise_for_status
+    resp.raise_for_status()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/httpx/_models.py", line 761, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '409 Conflict' for url 'https://10.152.183.1/api/v1/namespaces/test/endpoints/postgresql-k8s?force=true&fieldManager=postgresql-k8s'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1218, in _on_stop
+    client.apply(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/lightkube/core/client.py", line 457, in apply
+    return self.patch(type(obj), name, obj, namespace=namespace,
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/lightkube/core/client.py", line 325, in patch
+    return self._client.request("patch", res=res, name=name, namespace=namespace, obj=obj,
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/lightkube/core/generic_client.py", line 245, in request
+    return self.handle_response(method, resp, br)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/lightkube/core/generic_client.py", line 196, in handle_response
+    self.raise_for_status(resp)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/lightkube/core/generic_client.py", line 190, in raise_for_status
+    raise transform_exception(e)
+lightkube.core.exceptions.ApiError: Operation cannot be fulfilled on endpoints "postgresql-k8s": the object has been modified; please apply your changes to the latest version and try again
+unit-postgresql-k8s-0: 01:36:00 ERROR unit.postgresql-k8s/0.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 501, in _on_peer_relation_changed
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1658, in update_config
+    current_layer = container.get_plan()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 2274, in get_plan
+    return self._pebble.get_plan()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/pebble.py", line 2219, in get_plan
+    resp = self._request('GET', '/v1/plan', {'format': 'yaml'})
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/pebble.py", line 1859, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/pebble.py", line 1912, in _request_raw
+    raise ConnectionError(
+ops.pebble.ConnectionError: Could not connect to Pebble: socket not found at '/charm/containers/postgresql/pebble.socket' (container restarted?)
+unit-postgresql-k8s-0: 01:36:01 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:39:13 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-0: 01:41:57 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

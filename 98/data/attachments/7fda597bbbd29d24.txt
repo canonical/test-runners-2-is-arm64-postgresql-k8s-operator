@@ -1,0 +1,74 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:44:31Z
+
+App                  Version  Status   Scale  Charm                Channel  Rev  Address         Exposed  Message
+postgresql-k8s       14.11    waiting      3  postgresql-k8s                  0  10.152.183.187  no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  edge     167  10.152.183.112  no       
+
+Unit                    Workload     Agent      Address      Ports  Message
+postgresql-k8s/0        waiting      idle       10.1.52.204         awaiting for cluster to start
+postgresql-k8s/1*       maintenance  executing  10.1.52.205         (stop) stopping charm software
+postgresql-k8s/2        active       idle       10.1.52.206         
+postgresql-test-app/0*  active       idle       10.1.52.203         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-2: 01:39:41 ERROR unit.postgresql-k8s/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 864, in _on_postgresql_pebble_ready
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1658, in update_config
+    current_layer = container.get_plan()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/model.py", line 2274, in get_plan
+    return self._pebble.get_plan()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/pebble.py", line 2219, in get_plan
+    resp = self._request('GET', '/v1/plan', {'format': 'yaml'})
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/pebble.py", line 1859, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/pebble.py", line 1912, in _request_raw
+    raise ConnectionError(
+ops.pebble.ConnectionError: Could not connect to Pebble: socket not found at '/charm/containers/postgresql/pebble.socket' (container restarted?)
+unit-postgresql-k8s-2: 01:39:42 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:44:27 ERROR unit.postgresql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 827, in _on_postgresql_pebble_ready
+    self.unit.set_workload_version(self._patroni.rock_postgresql_version)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 607, in set_workload_version
+    raise TypeError(
+TypeError: workload version must be a str, not NoneType: None
+unit-postgresql-k8s-0: 01:44:28 ERROR juju.worker.uniter.operation hook "postgresql-pebble-ready" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:44:28 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: hook failed
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
