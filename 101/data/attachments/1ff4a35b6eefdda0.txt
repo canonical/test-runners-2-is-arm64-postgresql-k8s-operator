@@ -1,0 +1,150 @@
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [executing] maintenance: installing charm software
+  untrusted-postgresql-k8s/1 [executing] maintenance: installing charm software
+  untrusted-postgresql-k8s/2 [executing] blocked: Insufficient permissions, try: `juju trust untrusted-postgresql-k8s --scope=cluster`
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] unknown: 
+  untrusted-postgresql-k8s/1 [idle] unknown: 
+  untrusted-postgresql-k8s/2 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] unknown: 
+  untrusted-postgresql-k8s/1 [idle] unknown: 
+  untrusted-postgresql-k8s/2 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] unknown: 
+  untrusted-postgresql-k8s/1 [executing] unknown: 
+  untrusted-postgresql-k8s/2 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] unknown: 
+  untrusted-postgresql-k8s/1 [idle] unknown: 
+  untrusted-postgresql-k8s/2 [idle] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] unknown: 
+  untrusted-postgresql-k8s/1 [executing] maintenance: stopping charm software
+  untrusted-postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] unknown: 
+  untrusted-postgresql-k8s/1 [executing] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/2 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] unknown: 
+  untrusted-postgresql-k8s/1 [executing] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/1 [idle] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] waiting: awaiting for member to start
+  untrusted-postgresql-k8s/1 [executing] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] waiting: awaiting for member to start
+  untrusted-postgresql-k8s/1 [executing] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/2 [idle] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] active: 
+  untrusted-postgresql-k8s/1 [idle] maintenance: stopping charm software
+  untrusted-postgresql-k8s/2 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] active: 
+  untrusted-postgresql-k8s/1 [idle] active: 
+  untrusted-postgresql-k8s/2 [executing] maintenance: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [executing] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/1 [idle] active: 
+  untrusted-postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/1 [idle] active: 
+  untrusted-postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/1 [idle] active: 
+  untrusted-postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/1 [idle] maintenance: 
+  untrusted-postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  untrusted-postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/1 [executing] waiting: awaiting for cluster to start
+  untrusted-postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:47:42Z
+
+App                       Version  Status   Scale  Charm           Channel  Rev  Address         Exposed  Message
+untrusted-postgresql-k8s  14.11    waiting      3  postgresql-k8s             0  10.152.183.135  no       installing agent
+
+Unit                         Workload     Agent  Address      Ports  Message
+untrusted-postgresql-k8s/0   waiting      idle   10.1.21.139         awaiting for cluster to start
+untrusted-postgresql-k8s/1   error        idle   10.1.21.141         hook failed: "upgrade-relation-changed"
+untrusted-postgresql-k8s/2*  maintenance  idle   10.1.21.140         stopping charm software
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-5e42e8ba-f673-4a9b-84c2-dfdd9250060f: 01:36:41 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: unknown (get serviceaccounts)
+unit-untrusted-postgresql-k8s-2: 01:38:42 ERROR unit.untrusted-postgresql-k8s/2.juju-log 
+            Access to k8s cluster resources is not authorized. This happens when RBAC is enabled and the deployed application was not trusted by the juju admin.
+            To fix this issue, run `juju trust untrusted-postgresql-k8s --scope=cluster` (or remove & re-deploy untrusted-postgresql-k8s with `--trust`)
+            
+unit-untrusted-postgresql-k8s-2: 01:38:42 ERROR unit.untrusted-postgresql-k8s/2.juju-log 
+            Access to k8s cluster resources is not authorized. This happens when RBAC is enabled and the deployed application was not trusted by the juju admin.
+            To fix this issue, run `juju trust untrusted-postgresql-k8s --scope=cluster` (or remove & re-deploy untrusted-postgresql-k8s with `--trust`)
+            
+unit-untrusted-postgresql-k8s-1: 01:44:55 ERROR unit.untrusted-postgresql-k8s/1.juju-log failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 303, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 127, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "untrusted-postgresql-k8s-primary.test.svc.cluster.local" (10.152.183.101), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/./src/charm.py", line 639, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 327, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-untrusted-postgresql-k8s-1: 01:47:38 ERROR unit.untrusted-postgresql-k8s/1.juju-log upgrade:2: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/./src/charm.py", line 842, in _on_postgresql_pebble_ready
+    self.push_tls_files_to_workload(container)
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/./src/charm.py", line 1534, in push_tls_files_to_workload
+    return self.update_config()
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-untrusted-postgresql-k8s-1/charm/./src/charm.py", line 1659, in update_config
+    if metrics_service := current_layer.services[self._metrics_service]:
+KeyError: 'metrics_server'
+unit-untrusted-postgresql-k8s-1: 01:47:38 ERROR juju.worker.uniter.operation hook "upgrade-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
