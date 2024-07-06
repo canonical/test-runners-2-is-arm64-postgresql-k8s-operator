@@ -1,0 +1,1 @@
+[32mINFO    [0m integration.test_charm:test_charm.py:303 connecting to primary postgresql-k8s/1 on 10.1.50.14

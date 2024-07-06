@@ -1,0 +1,11 @@
+[32mINFO    [0m integration.test_charm:test_charm.py:274 connecting to primary postgresql-k8s/0 on 10.1.50.11
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] active: Primary
+  postgresql-k8s/1 [idle] waiting: awaiting for cluster to start
+  postgresql-k8s/2 [idle] active: 
+  postgresql-k8s/3 [idle] maintenance: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-k8s/0 [idle] maintenance: reconfiguring cluster
+  postgresql-k8s/1 [idle] waiting: awaiting for cluster to start
+  postgresql-k8s/2 [executing] waiting: awaiting for cluster to start
+  postgresql-k8s/3 [executing] waiting: awaiting for cluster to start
