@@ -1,0 +1,883 @@
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:59:58Z
+
+App             Version  Status   Scale  Charm           Channel  Rev  Address         Exposed  Message
+postgresql-k8s           waiting    0/3  postgresql-k8s             0  10.152.183.230  no       waiting for units to settle down
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-0: 01:49:51 ERROR unit.postgresql-k8s/0.juju-log Cluster upgrade failed, ensure pre-upgrade checks are ran first.
+model-26512d31-d3b1-44a7-8d86-b5aa931fc8f8: 01:52:01 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2625": net/http: TLS handshake timeout
+model-26512d31-d3b1-44a7-8d86-b5aa931fc8f8: 01:52:04 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2625": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:52:05 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": Get "https://10.152.183.1:443/api/v1/namespaces/test/pods?labelSelector=app.kubernetes.io%2Fname%3Dpostgresql-k8s": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: unexpected EOF
+controller-0: 01:52:08 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-26512d31-d3b1-44a7-8d86-b5aa931fc8f8: 01:52:09 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2625": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:52:12 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:52:15 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:52:18 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-1: 01:52:20 ERROR unit.postgresql-k8s/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1174, in _on_stop
+    pod0 = client.get(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/client.py", line 140, in get
+    return self._client.request("get", res=res, name=name, namespace=namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 244, in request
+    resp = self.send(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 216, in send
+    return self._client.send(req, stream=stream)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+model-26512d31-d3b1-44a7-8d86-b5aa931fc8f8: 01:52:21 ERROR juju.kubernetes.klog github.com/juju/juju/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2625": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-1: 01:52:21 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+controller-0: 01:52:22 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-2: 01:52:23 ERROR unit.postgresql-k8s/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1174, in _on_stop
+    pod0 = client.get(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/client.py", line 140, in get
+    return self._client.request("get", res=res, name=name, namespace=namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 244, in request
+    resp = self.send(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 216, in send
+    return self._client.send(req, stream=stream)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+unit-postgresql-k8s-0: 01:52:23 ERROR unit.postgresql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3139, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-0/secret-get', '--label', 'database-peers.postgresql-k8s.app', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 566, in _on_config_changed
+    self._validate_config_options()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1676, in _validate_config_options
+    not in self.postgresql.get_postgresql_text_search_configs()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 343, in postgresql
+    password=self.get_secret(APP_SCOPE, f"{USER}-password"),
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 300, in get_secret
+    if result := self.peer_relation_data(scope).fetch_my_relation_field(peers.id, key):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1260, in fetch_my_relation_field
+    if relation_data := self.fetch_my_relation_data([relation_id], [field], relation_name):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1249, in fetch_my_relation_data
+    data[relation.id] = self._fetch_my_specific_relation_data(relation, fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 534, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2083, in _fetch_my_specific_relation_data
+    self.component, self.secret_fields, relation, fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1817, in secret_fields
+    self.static_secret_fields if self.static_secret_fields else self.current_secret_fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1836, in current_secret_fields
+    if content := self._get_group_secret_contents(relation, group):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2070, in _get_group_secret_contents
+    result = super()._get_group_secret_contents(relation, group, secret_fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1000, in _get_group_secret_contents
+    if (secret := self._get_relation_secret(relation.id, group)) and (
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 506, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2059, in _get_relation_secret
+    return self.secrets.get(label, secret_uri, legacy_labels=self._previous_labels())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 706, in get
+    if secret.meta:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 605, in meta
+    self._secret_meta = self._model.get_secret(label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 285, in get_secret
+    content = self._backend.secret_get(id=id, label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3504, in secret_get
+    result = self._run('secret-get', *args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3141, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR unable to determine legacy status for namespace "test": Get "https://10.152.183.1:443/api/v1/namespaces/test": dial tcp 10.152.183.1:443: connect: connection refused
+
+unit-postgresql-k8s-2: 01:52:23 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:52:24 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+controller-0: 01:52:25 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-1: 01:52:26 ERROR unit.postgresql-k8s/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1174, in _on_stop
+    pod0 = client.get(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/client.py", line 140, in get
+    return self._client.request("get", res=res, name=name, namespace=namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 244, in request
+    resp = self.send(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 216, in send
+    return self._client.send(req, stream=stream)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+unit-postgresql-k8s-1: 01:52:26 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-2: 01:52:26 ERROR unit.postgresql-k8s/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1174, in _on_stop
+    pod0 = client.get(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/client.py", line 140, in get
+    return self._client.request("get", res=res, name=name, namespace=namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 244, in request
+    resp = self.send(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 216, in send
+    return self._client.send(req, stream=stream)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+unit-postgresql-k8s-2: 01:52:26 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:52:27 ERROR unit.postgresql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3139, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-0/secret-get', '--label', 'database-peers.postgresql-k8s.app', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 566, in _on_config_changed
+    self._validate_config_options()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1676, in _validate_config_options
+    not in self.postgresql.get_postgresql_text_search_configs()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 343, in postgresql
+    password=self.get_secret(APP_SCOPE, f"{USER}-password"),
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 300, in get_secret
+    if result := self.peer_relation_data(scope).fetch_my_relation_field(peers.id, key):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1260, in fetch_my_relation_field
+    if relation_data := self.fetch_my_relation_data([relation_id], [field], relation_name):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1249, in fetch_my_relation_data
+    data[relation.id] = self._fetch_my_specific_relation_data(relation, fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 534, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2083, in _fetch_my_specific_relation_data
+    self.component, self.secret_fields, relation, fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1817, in secret_fields
+    self.static_secret_fields if self.static_secret_fields else self.current_secret_fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1836, in current_secret_fields
+    if content := self._get_group_secret_contents(relation, group):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2070, in _get_group_secret_contents
+    result = super()._get_group_secret_contents(relation, group, secret_fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1000, in _get_group_secret_contents
+    if (secret := self._get_relation_secret(relation.id, group)) and (
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 506, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2059, in _get_relation_secret
+    return self.secrets.get(label, secret_uri, legacy_labels=self._previous_labels())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 706, in get
+    if secret.meta:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 605, in meta
+    self._secret_meta = self._model.get_secret(label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 285, in get_secret
+    content = self._backend.secret_get(id=id, label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3504, in secret_get
+    result = self._run('secret-get', *args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3141, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR unable to determine legacy status for namespace "test": Get "https://10.152.183.1:443/api/v1/namespaces/test": dial tcp 10.152.183.1:443: connect: connection refused
+
+unit-postgresql-k8s-0: 01:52:27 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+controller-0: 01:52:28 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-2: 01:52:28 ERROR unit.postgresql-k8s/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1174, in _on_stop
+    pod0 = client.get(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/client.py", line 140, in get
+    return self._client.request("get", res=res, name=name, namespace=namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 244, in request
+    resp = self.send(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 216, in send
+    return self._client.send(req, stream=stream)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_transports/default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+unit-postgresql-k8s-1: 01:52:28 ERROR unit.postgresql-k8s/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1174, in _on_stop
+    pod0 = client.get(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/client.py", line 140, in get
+    return self._client.request("get", res=res, name=name, namespace=namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 244, in request
+    resp = self.send(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 216, in send
+    return self._client.send(req, stream=stream)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+unit-postgresql-k8s-2: 01:52:28 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:52:28 ERROR unit.postgresql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3139, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-0/secret-get', '--label', 'database-peers.postgresql-k8s.app', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 566, in _on_config_changed
+    self._validate_config_options()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1676, in _validate_config_options
+    not in self.postgresql.get_postgresql_text_search_configs()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 343, in postgresql
+    password=self.get_secret(APP_SCOPE, f"{USER}-password"),
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 300, in get_secret
+    if result := self.peer_relation_data(scope).fetch_my_relation_field(peers.id, key):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1260, in fetch_my_relation_field
+    if relation_data := self.fetch_my_relation_data([relation_id], [field], relation_name):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1249, in fetch_my_relation_data
+    data[relation.id] = self._fetch_my_specific_relation_data(relation, fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 534, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2083, in _fetch_my_specific_relation_data
+    self.component, self.secret_fields, relation, fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1817, in secret_fields
+    self.static_secret_fields if self.static_secret_fields else self.current_secret_fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1836, in current_secret_fields
+    if content := self._get_group_secret_contents(relation, group):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2070, in _get_group_secret_contents
+    result = super()._get_group_secret_contents(relation, group, secret_fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1000, in _get_group_secret_contents
+    if (secret := self._get_relation_secret(relation.id, group)) and (
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 506, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2059, in _get_relation_secret
+    return self.secrets.get(label, secret_uri, legacy_labels=self._previous_labels())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 706, in get
+    if secret.meta:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 605, in meta
+    self._secret_meta = self._model.get_secret(label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 285, in get_secret
+    content = self._backend.secret_get(id=id, label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3504, in secret_get
+    result = self._run('secret-get', *args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 3141, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR unable to determine legacy status for namespace "test": Get "https://10.152.183.1:443/api/v1/namespaces/test": dial tcp 10.152.183.1:443: connect: connection refused
+
+unit-postgresql-k8s-1: 01:52:28 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:52:29 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-0: 01:52:52 ERROR unit.postgresql-k8s/0.juju-log failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 319, in enable_disable_extensions
+    cursor.execute(
+psycopg2.errors.ReadOnlySqlTransaction: cannot execute DROP EXTENSION in a read-only transaction
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 639, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 327, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-postgresql-k8s-2: 01:53:13 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-1: 01:53:47 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-2: 01:54:36 ERROR unit.postgresql-k8s/2.juju-log failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 303, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 127, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgresql-k8s-primary.test.svc.cluster.local" (10.152.183.84), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 639, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 327, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-postgresql-k8s-1: 01:54:44 ERROR unit.postgresql-k8s/1.juju-log failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 303, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 127, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgresql-k8s-primary.test.svc.cluster.local" (10.152.183.84), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 639, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 327, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-postgresql-k8s-1: 01:55:22 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-2: 01:55:30 ERROR unit.postgresql-k8s/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 864, in _on_postgresql_pebble_ready
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1659, in update_config
+    if metrics_service := current_layer.services[self._metrics_service]:
+KeyError: 'metrics_server'
+unit-postgresql-k8s-2: 01:55:32 ERROR juju.worker.uniter.operation hook "postgresql-pebble-ready" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-2: 01:55:32 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: hook failed
+unit-postgresql-k8s-0: 01:55:36 ERROR unit.postgresql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 842, in _on_postgresql_pebble_ready
+    self.push_tls_files_to_workload(container)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1534, in push_tls_files_to_workload
+    return self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1658, in update_config
+    current_layer = container.get_plan()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/model.py", line 2274, in get_plan
+    return self._pebble.get_plan()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/pebble.py", line 2219, in get_plan
+    resp = self._request('GET', '/v1/plan', {'format': 'yaml'})
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/pebble.py", line 1859, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/pebble.py", line 1912, in _request_raw
+    raise ConnectionError(
+ops.pebble.ConnectionError: Could not connect to Pebble: socket not found at '/charm/containers/postgresql/pebble.socket' (container restarted?)
+unit-postgresql-k8s-0: 01:55:37 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-0: 01:56:41 ERROR unit.postgresql-k8s/0.juju-log failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 303, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 127, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgresql-k8s-primary.test.svc.cluster.local" (10.152.183.84), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 639, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 327, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-postgresql-k8s-1: 01:57:43 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-1: 01:59:57 ERROR unit.postgresql-k8s/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 3139, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-1/relation-get', '-r', '0', '-', 'postgresql-k8s/1', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 546, in main
+    manager = _Manager(charm_class, use_juju_for_storage=use_juju_for_storage)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 429, in __init__
+    self.charm = self._make_charm(self.framework, self.dispatcher)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 432, in _make_charm
+    charm = self._charm_class(framework)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 288, in wrap_init
+    original_init(self, framework, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 201, in __init__
+    jobs=self._generate_metrics_jobs(self.is_tls_enabled),
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1355, in is_tls_enabled
+    return all(self.tls.get_tls_files())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql_tls.py", line 215, in get_tls_files
+    ca = self.charm.get_secret(SCOPE, "ca")
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 300, in get_secret
+    if result := self.peer_relation_data(scope).fetch_my_relation_field(peers.id, key):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1260, in fetch_my_relation_field
+    if relation_data := self.fetch_my_relation_data([relation_id], [field], relation_name):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1249, in fetch_my_relation_data
+    data[relation.id] = self._fetch_my_specific_relation_data(relation, fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 534, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2083, in _fetch_my_specific_relation_data
+    self.component, self.secret_fields, relation, fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1817, in secret_fields
+    self.static_secret_fields if self.static_secret_fields else self.current_secret_fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1836, in current_secret_fields
+    if content := self._get_group_secret_contents(relation, group):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2070, in _get_group_secret_contents
+    result = super()._get_group_secret_contents(relation, group, secret_fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1000, in _get_group_secret_contents
+    if (secret := self._get_relation_secret(relation.id, group)) and (
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 506, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2053, in _get_relation_secret
+    secret_uri = relation.data[self.component].get(self._generate_secret_field_name(), None)
+  File "/usr/lib/python3.10/_collections_abc.py", line 824, in get
+    return self[key]
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 1771, in __getitem__
+    return super().__getitem__(key)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 835, in __getitem__
+    return self._data[key]
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 819, in _data
+    data = self._lazy_data = self._load()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 1659, in _load
+    return self._backend.relation_get(self.relation.id, self._entity.name, self._is_app)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 3216, in relation_get
+    raw_data_content = self._run(*args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 3141, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR permission denied
+
+unit-postgresql-k8s-1: 01:59:57 ERROR juju.worker.uniter.operation hook "stop" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
