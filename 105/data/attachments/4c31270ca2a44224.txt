@@ -1,0 +1,68 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:44:07Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-k8s       14.11    waiting      3  postgresql-k8s       14/edge      301  10.152.183.89   no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  latest/edge  173  10.152.183.169  no       
+
+Unit                    Workload     Agent  Address      Ports  Message
+postgresql-k8s/0        waiting      idle   10.1.12.211         awaiting for cluster to start
+postgresql-k8s/1*       maintenance  idle   10.1.12.212         reconfiguring cluster
+postgresql-k8s/2        waiting      idle   10.1.12.210         awaiting for cluster to start
+postgresql-test-app/0*  active       idle   10.1.12.200         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-2: 01:40:21 ERROR unit.postgresql-k8s/2.juju-log failed to patch k8s Endpoints postgresql-k8s
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 188, in raise_for_status
+    resp.raise_for_status()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/httpx/_models.py", line 761, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '409 Conflict' for url 'https://10.152.183.1/api/v1/namespaces/test/endpoints/postgresql-k8s?force=true&fieldManager=postgresql-k8s'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1218, in _on_stop
+    client.apply(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/client.py", line 457, in apply
+    return self.patch(type(obj), name, obj, namespace=namespace,
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/client.py", line 325, in patch
+    return self._client.request("patch", res=res, name=name, namespace=namespace, obj=obj,
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 245, in request
+    return self.handle_response(method, resp, br)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 196, in handle_response
+    self.raise_for_status(resp)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/lightkube/core/generic_client.py", line 190, in raise_for_status
+    raise transform_exception(e)
+lightkube.core.exceptions.ApiError: Operation cannot be fulfilled on endpoints "postgresql-k8s": the object has been modified; please apply your changes to the latest version and try again
+unit-postgresql-k8s-1: 01:41:36 ERROR unit.postgresql-k8s/1.juju-log failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 307, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 131, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgresql-k8s-primary.test.svc.cluster.local" (10.152.183.224), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 639, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 331, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
