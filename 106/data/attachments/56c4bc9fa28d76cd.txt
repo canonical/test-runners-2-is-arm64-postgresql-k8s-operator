@@ -1,0 +1,42 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:85 Destroying second model
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:42:40Z
+
+App                  Version  Status   Scale  Charm                Channel        Rev  Address         Exposed  Message
+postgresql-k8s       14.11    waiting      3  postgresql-k8s                        0  10.152.183.214  no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  latest/stable  145  10.152.183.204  no       
+
+Unit                    Workload  Agent      Address      Ports  Message
+postgresql-k8s/0        unknown   idle       10.1.128.12         
+postgresql-k8s/1*       waiting   executing  10.1.128.13         (config-changed) awaiting for primary endpoint to be ready
+postgresql-k8s/2        unknown   idle       10.1.128.14         
+postgresql-test-app/0*  active    idle       10.1.128.18         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-1: 01:42:32 ERROR unit.postgresql-k8s/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 827, in _on_postgresql_pebble_ready
+    self.unit.set_workload_version(self._patroni.rock_postgresql_version)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 607, in set_workload_version
+    raise TypeError(
+TypeError: workload version must be a str, not NoneType: None
+unit-postgresql-k8s-1: 01:42:33 ERROR juju.worker.uniter.operation hook "config-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
