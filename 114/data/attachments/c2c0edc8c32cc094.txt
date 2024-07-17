@@ -1,0 +1,56 @@
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-2562' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.1.8    unsupported  01:45:03Z
+
+App                  Version  Status       Scale  Charm                Channel  Rev  Address         Exposed  Message
+another-database     14.11    waiting          3  postgresql-k8s                  0  10.152.183.148  no       installing agent
+database             14.11    waiting          3  postgresql-k8s                  1  10.152.183.245  no       awaiting for primary endpoint to be ready
+postgresql-test-app           maintenance    1/2  postgresql-test-app  edge     177  10.152.183.87   no       
+
+Unit                    Workload     Agent      Address      Ports  Message
+another-database/0*     waiting      executing  10.1.121.78         (config-changed) awaiting for primary endpoint to be ready
+another-database/1      unknown      idle       10.1.121.80         
+another-database/2      maintenance  executing  10.1.121.84         (stop) stopping charm software
+database/0*             waiting      executing  10.1.121.79         (start) awaiting for primary endpoint to be ready
+database/1              unknown      idle       10.1.121.85         
+database/2              unknown      idle       10.1.121.83         
+postgresql-test-app/0   active       idle       10.1.121.72         
+postgresql-test-app/1*  unknown      lost       10.1.121.76         agent lost, see 'juju show-status-log postgresql-test-app/1'
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:35 ERROR juju.worker.dependency "caas-broker-tracker" manifold worker returned unexpected error: connection is shut down
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:35 ERROR juju.worker.dependency "upgrader" manifold worker returned unexpected error: connection is shut down
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:35 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: connection is shut down
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:35 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: use of closed network connection
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:35 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:40 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8bd1c9] "model-8bd1c9bf-7278-449b-84d2-f34512a07aab" cannot open api: unable to connect to API: dial tcp 10.152.183.22:17070: connect: connection refused
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:44 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8bd1c9] "model-8bd1c9bf-7278-449b-84d2-f34512a07aab" cannot open api: unable to connect to API: dial tcp 10.152.183.22:17070: connect: connection refused
+model-8bd1c9bf-7278-449b-84d2-f34512a07aab: 01:38:49 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8bd1c9] "model-8bd1c9bf-7278-449b-84d2-f34512a07aab" cannot open api: unable to connect to API: dial tcp 10.152.183.22:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
