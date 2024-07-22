@@ -1,0 +1,260 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model microk8s-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/s3-integrator-23
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/self-signed-certificates-160
+[32mINFO    [0m juju.model:model.py:2098 Deploying local:jammy/postgresql-k8s-0
+[33mWARNING [0m juju.model:model.py:1564 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [allocating] waiting: installing agent
+  postgresql-k8s-aws/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [allocating] waiting: installing agent
+  postgresql-k8s-aws/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] maintenance: installing charm software
+  postgresql-k8s-aws/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] maintenance: installing charm software
+  postgresql-k8s-aws/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] maintenance: installing charm software
+  postgresql-k8s-aws/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] maintenance: installing charm software
+  postgresql-k8s-aws/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] blocked: failed to patch pod with error Timeout: request did not complete within requested timeout - context deadline exceeded
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] blocked: failed to patch pod with error Timeout: request did not complete within requested timeout - context deadline exceeded
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m integration.test_backups:test_backups.py:88 deleting the previously created backups
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-4118' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-4129' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[31m[1mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-aws-1: 01:59:32 ERROR unit.postgresql-k8s-aws/1.juju-log failed to patch pod
+controller-0: 02:01:40 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": refreshing application status for "s3-integrator": Get "https://10.152.183.1:443/api/v1/namespaces/test/pods?labelSelector=app.kubernetes.io%2Fname%3Ds3-integrator": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: read tcp 10.1.20.134:40586->10.152.183.1:443: read: connection reset by peer
+controller-0: 02:01:44 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s-aws": Get "https://10.152.183.1:443/api/v1/namespaces/test/pods?labelSelector=app.kubernetes.io%2Fname%3Dpostgresql-k8s-aws": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:45 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:49 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s-aws": checking if "postgresql-k8s-aws" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-aws-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:50 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:52 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s-aws": checking if "postgresql-k8s-aws" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-aws-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:53 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": refreshing application status for "self-signed-certificates": Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:53 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-f5699c9f-d98e-4feb-810f-4aae81abb7ee: 02:01:54 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2305": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:56 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s-aws": checking if "postgresql-k8s-aws" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-aws-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-f5699c9f-d98e-4feb-810f-4aae81abb7ee: 02:01:58 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2305": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:59 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:59 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": checking if "self-signed-certificates" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:01:59 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s-aws": checking if "postgresql-k8s-aws" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-aws-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-self-signed-certificates-0: 02:01:59 ERROR unit.self-signed-certificates/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/model.py", line 3180, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-self-signed-certificates-0/secret-get', '--label', 'ca-certificates', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/./src/charm.py", line 341, in <module>
+    main(SelfSignedCertificatesCharm)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/./src/charm.py", line 196, in _configure
+    if not self._root_certificate_is_stored or not self._root_certificate_matches_config():
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/./src/charm.py", line 147, in _root_certificate_is_stored
+    self.model.get_secret(label=CA_CERTIFICATES_SECRET_LABEL)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/model.py", line 291, in get_secret
+    content = self._backend.secret_get(id=id, label=label)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/model.py", line 3545, in secret_get
+    result = self._run('secret-get', *args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-self-signed-certificates-0/charm/venv/ops/model.py", line 3182, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR unable to determine legacy status for namespace "test": Get "https://10.152.183.1:443/api/v1/namespaces/test": dial tcp 10.152.183.1:443: connect: connection refused
+
+unit-postgresql-k8s-aws-0: 02:02:00 ERROR unit.postgresql-k8s-aws/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/venv/ops/model.py", line 3180, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-aws-0/secret-get', '--label', 'database-peers.postgresql-k8s-aws.unit', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/venv/ops/main.py", line 546, in main
+    manager = _Manager(charm_class, use_juju_for_storage=use_juju_for_storage)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/venv/ops/main.py", line 429, in __init__
+    self.charm = self._make_charm(self.framework, self.dispatcher)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/venv/ops/main.py", line 432, in _make_charm
+    charm = self._charm_class(framework)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 376, in wrap_init
+    original_init(self, framework, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/./src/charm.py", line 201, in __init__
+    jobs=self._generate_metrics_jobs(self.is_tls_enabled),
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/./src/charm.py", line 1355, in is_tls_enabled
+    return all(self.tls.get_tls_files())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/postgresql_k8s/v0/postgresql_tls.py", line 215, in get_tls_files
+    ca = self.charm.get_secret(SCOPE, "ca")
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/./src/charm.py", line 300, in get_secret
+    if result := self.peer_relation_data(scope).fetch_my_relation_field(peers.id, key):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1260, in fetch_my_relation_field
+    if relation_data := self.fetch_my_relation_data([relation_id], [field], relation_name):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1249, in fetch_my_relation_data
+    data[relation.id] = self._fetch_my_specific_relation_data(relation, fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 534, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2083, in _fetch_my_specific_relation_data
+    self.component, self.secret_fields, relation, fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1817, in secret_fields
+    self.static_secret_fields if self.static_secret_fields else self.current_secret_fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1836, in current_secret_fields
+    if content := self._get_group_secret_contents(relation, group):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2070, in _get_group_secret_contents
+    result = super()._get_group_secret_contents(relation, group, secret_fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1000, in _get_group_secret_contents
+    if (secret := self._get_relation_secret(relation.id, group)) and (
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 506, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2059, in _get_relation_secret
+    return self.secrets.get(label, secret_uri, legacy_labels=self._previous_labels())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 706, in get
+    if secret.meta:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 605, in meta
+    self._secret_meta = self._model.get_secret(label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/venv/ops/model.py", line 291, in get_secret
+    content = self._backend.secret_get(id=id, label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/venv/ops/model.py", line 3545, in secret_get
+    result = self._run('secret-get', *args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-0/charm/venv/ops/model.py", line 3182, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR unable to determine legacy status for namespace "test": Get "https://10.152.183.1:443/api/v1/namespaces/test": dial tcp 10.152.183.1:443: connect: connection refused
+
+unit-self-signed-certificates-0: 02:02:00 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-aws-0: 02:02:00 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+controller-0: 02:02:02 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s-aws": checking if "postgresql-k8s-aws" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-aws-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:02:02 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": checking if "self-signed-certificates" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:02:02 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-f5699c9f-d98e-4feb-810f-4aae81abb7ee: 02:02:03 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2305": dial tcp 10.152.183.1:443: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

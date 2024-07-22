@@ -1,0 +1,1 @@
+[32mINFO    [0m juju.model:model.py:2098 Deploying local:postgresql-k8s-0
