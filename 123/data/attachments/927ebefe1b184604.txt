@@ -1,0 +1,21 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  02:09:14Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-k8s       14.12    waiting      3  postgresql-k8s                      0  10.152.183.159  no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  latest/edge  189  10.152.183.250  no       
+
+Unit                    Workload  Agent      Address       Ports  Message
+postgresql-k8s/0        active    idle       10.1.221.207         
+postgresql-k8s/1*       waiting   executing  10.1.221.209         awaiting for member to start
+postgresql-k8s/2        waiting   idle       10.1.221.208         awaiting for cluster to start
+postgresql-test-app/0*  active    idle       10.1.221.203         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-0: 01:56:55 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+model-ac3cbfc4-24a5-4fab-8bce-6b0103ef97bf: 01:57:25 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
