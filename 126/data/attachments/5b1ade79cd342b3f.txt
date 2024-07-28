@@ -1,0 +1,494 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:489 starting continuous writes to the database
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:492 checking whether writes are increasing
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:496 scaling out the first cluster
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s (waiting for exactly 4 units, current : 3)
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] active: 
+  postgresql-k8s/3 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] active: 
+  postgresql-k8s/3 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] waiting: awaiting for member to start
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [executing] active: 
+  postgresql-k8s/3 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] active: 
+  postgresql-k8s/3 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/3 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/3 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/3 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/3 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/3 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/3 [idle] active: 
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:500 checking whether writes are increasing
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test-other/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test-other/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test-other/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-1 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m httpx:_client.py:1026 HTTP Request: GET https://10.145.225.254:16443/api/v1/namespaces/test-other/pods/postgresql-k8s-2 "HTTP/1.1 200 OK"
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:503 scaling out the second cluster
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s (waiting for exactly 4 units, current : 3)
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s (waiting for exactly 4 units, current : 3)
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s (waiting for exactly 4 units, current : 3)
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s (waiting for exactly 4 units, current : 3)
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Standby
+  postgresql-k8s/3 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Standby
+  postgresql-k8s/3 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] maintenance: reconfiguring cluster
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Standby
+  postgresql-k8s/3 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Standby
+  postgresql-k8s/3 [executing] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: 
+  postgresql-k8s/2 [idle] active: Standby
+  postgresql-k8s/3 [executing] waiting: awaiting for member to start
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-40292' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-40295' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-40296' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m websockets.client:protocol.py:1019 data transfer failed
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/protocol.py", line 963, in transfer_data
+    message = await self.read_message()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/protocol.py", line 1033, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/protocol.py", line 1108, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/protocol.py", line 1165, in read_frame
+    frame = await Frame.read(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/framing.py", line 68, in read
+    data = await reader(2)
+  File "/usr/lib/python3.10/asyncio/streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "/usr/lib/python3.10/asyncio/streams.py", line 501, in _wait_for_data
+    await self._waiter
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 924, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-40308' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  02:32:27Z
+
+App                  Version  Status   Scale  Charm                Channel        Rev  Address         Exposed  Message
+postgresql-k8s       14.12    waiting    1/4  postgresql-k8s                        0  10.152.183.120  no       installing agent
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/stable  145  10.152.183.212  no       installing agent
+
+Unit                   Workload  Agent  Address     Ports  Message
+postgresql-k8s/0       error     lost   10.1.11.87         container error: 
+postgresql-k8s/1*      waiting   idle   10.1.11.78         awaiting for cluster to start
+postgresql-k8s/2       error     lost   10.1.11.77         unknown container reason "StartError": failed to create containerd task: failed to create shim task: context canceled...
+postgresql-k8s/3       error     lost   10.1.11.90         unknown container reason "StartError": failed to create containerd task: failed to create shim task: context canceled...
+postgresql-test-app/0  error     lost   10.1.11.82         unknown container reason "StartError": failed to create containerd task: failed to create shim task: context canceled...
+
+Offer              Application     Charm           Rev  Connected  Endpoint           Interface         Role
+replication        postgresql-k8s  postgresql-k8s  0    0/0        replication        postgresql_async  requirer
+replication-offer  postgresql-k8s  postgresql-k8s  0    1/1        replication-offer  postgresql_async  provider
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-0: 02:04:13 ERROR unit.postgresql-k8s/0.juju-log Cluster upgrade failed, ensure pre-upgrade checks are ran first.
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:21:53 ERROR juju.worker.dependency "caas-broker-tracker" manifold worker returned unexpected error: connection is shut down
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:21:53 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: connection is shut down
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:21:53 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.1.11.71:48984: use of closed network connection
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:21:54 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:21:58 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:22:02 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:22:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:22:13 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:22:20 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:22:23 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:22:27 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:22:28 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:22:33 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:22:37 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:22:40 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:22:48 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:22:49 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-3: 02:22:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-3" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:23:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:23:50 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+controller-0: 02:23:50 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": setting provisiong state for application "postgresql-test-app": connection is shut down
+controller-0: 02:23:50 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": setting provisiong state for application "postgresql-k8s": connection is shut down
+unit-postgresql-k8s-1: 02:23:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:23:57 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:24:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:24:03 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:24:03 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:24:04 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:24:05 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:24:06 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:24:40 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:26:32 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while postgresql-k8s/2 waiting for postgresql-k8s leadership release: error blocking on leadership release: lease manager stopped
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:26:38 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: write tcp 10.1.11.71:34026->10.152.183.240:17070: write: broken pipe
+controller-0: 02:26:40 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": connection is shut down
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:26:45 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:26:50 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:26:55 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:27:01 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:27:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+controller-0: 02:27:11 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": refreshing application status for "postgresql-k8s": connection is shut down
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:27:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:27:27 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:27:39 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:27:54 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:28:13 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:28:34 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:29:11 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:29:40 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:30:13 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:30:50 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c: 02:31:41 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "model-f728ba6d-d8b5-4dd7-8427-1cd1d8bc3b4c" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:32:05 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:32:10 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:32:11 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:32:14 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:32:16 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:32:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:32:23 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:32:23 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f728ba] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.240:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
