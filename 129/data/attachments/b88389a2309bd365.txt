@@ -1,0 +1,89 @@
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-3220' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-3221' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  01:52:21Z
+
+App             Version  Status       Scale  Charm           Channel  Rev  Address         Exposed  Message
+postgresql-k8s  14.12    maintenance    2/3  postgresql-k8s             0  10.152.183.253  no       stopping charm software
+
+Unit               Workload  Agent      Address       Ports  Message
+postgresql-k8s/0   unknown   idle       10.1.117.141         
+postgresql-k8s/1*  unknown   lost       10.1.117.139         agent lost, see 'juju show-status-log postgresql-k8s/1'
+postgresql-k8s/2   unknown   executing  10.1.117.140         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:41:33 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:41:39 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:41:48 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: try was stopped
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:41:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: i/o timeout
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:42:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:42:14 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:42:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:42:31 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:42:42 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-0: 01:42:44 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-2: 01:42:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-2" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+unit-postgresql-k8s-0: 01:42:48 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-2: 01:42:51 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-0: 01:42:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-2: 01:42:55 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+model-cad7361a-aa55-462a-8242-501a7b8d4ef5: 01:42:56 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "model-cad7361a-aa55-462a-8242-501a7b8d4ef5" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-0: 01:42:57 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-2: 01:42:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-0: 01:43:02 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-1: 01:43:02 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-2: 01:43:04 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [cad736] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.44:17070: connect: connection refused
+unit-postgresql-k8s-1: 01:43:38 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-1: 01:51:38 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+unit-postgresql-k8s-2: 01:52:50 ERROR juju.worker.uniter pebble poll failed for container "postgresql": failed to send pebble-ready event: terminated
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
