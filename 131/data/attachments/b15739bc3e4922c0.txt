@@ -1,0 +1,28 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  01:43:32Z
+
+App             Version  Status   Scale  Charm           Channel  Rev  Address        Exposed  Message
+postgresql-k8s           waiting    0/3  postgresql-k8s             0  10.152.183.71  no       installing agent
+
+Unit              Workload  Agent       Address  Ports  Message
+postgresql-k8s/0  waiting   allocating                  installing agent
+postgresql-k8s/1  waiting   allocating                  installing agent
+postgresql-k8s/2  waiting   allocating                  installing agent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 01:43:06 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": setting scale to 3 for "postgresql-k8s": scale patching statefulset "postgresql-k8s": Patch "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s": read tcp 10.1.231.5:38204->10.152.183.1:443: read: connection reset by peer
+model-60a00639-9d3b-4c0b-8e9f-fc1e9c9bdfec: 01:43:08 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1300": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:43:09 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-60a00639-9d3b-4c0b-8e9f-fc1e9c9bdfec: 01:43:10 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1300": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:43:13 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:43:16 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-60a00639-9d3b-4c0b-8e9f-fc1e9c9bdfec: 01:43:16 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1300": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:43:19 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
