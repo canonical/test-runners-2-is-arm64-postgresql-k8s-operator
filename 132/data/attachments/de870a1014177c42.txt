@@ -1,0 +1,39 @@
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-119' coro=<Connection._connect.<locals>._try_endpoint() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:803> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  03:37:28Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/edge  205  10.152.183.241  no       installing agent
+
+Unit                   Workload  Agent       Address  Ports  Message
+postgresql-test-app/0  waiting   allocating                  installing agent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-7d639c1e-8fbe-4b0d-8939-f42e3019ad2d: 03:36:58 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1169": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: read tcp 10.1.190.7:60806->10.152.183.1:443: read: connection reset by peer
+controller-0: 03:36:58 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": updating application "postgresql-test-app" to desired trust false: getting service account role "postgresql-test-app": Get "https://10.152.183.1:443/apis/rbac.authorization.k8s.io/v1/namespaces/test/roles/postgresql-test-app": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: unexpected EOF
+model-7d639c1e-8fbe-4b0d-8939-f42e3019ad2d: 03:37:01 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1169": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:37:01 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-7d639c1e-8fbe-4b0d-8939-f42e3019ad2d: 03:37:07 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1169": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:37:08 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:37:11 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:37:14 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
