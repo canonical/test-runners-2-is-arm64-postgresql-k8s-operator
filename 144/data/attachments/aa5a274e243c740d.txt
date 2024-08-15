@@ -1,0 +1,16 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  01:59:43Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-test-app           waiting    1/2  postgresql-test-app  latest/edge  216  10.152.183.174  no       installing agent
+
+Unit                    Workload  Agent       Address      Ports  Message
+postgresql-test-app/0*  waiting   allocating  10.1.31.200         agent initialising
+postgresql-test-app/1   running   idle        10.1.31.201         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

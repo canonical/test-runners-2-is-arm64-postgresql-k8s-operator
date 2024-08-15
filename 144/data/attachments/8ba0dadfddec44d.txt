@@ -1,0 +1,23 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  01:59:50Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address        Exposed  Message
+postgresql-k8s       14.12    waiting      3  postgresql-k8s                      0  10.152.183.52  no       awaiting for primary endpoint to be ready
+postgresql-test-app           active       1  postgresql-test-app  latest/edge  216  10.152.183.63  no       
+
+Unit                    Workload  Agent      Address      Ports  Message
+postgresql-k8s/0*       waiting   executing  10.1.143.11         awaiting for primary endpoint to be ready
+postgresql-k8s/1        unknown   executing  10.1.143.13         
+postgresql-k8s/2        unknown   idle       10.1.143.12         
+postgresql-test-app/0*  active    idle       10.1.143.14         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-a055e39a-bc4b-42ce-8757-33aff5e38101: 01:58:53 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1970": net/http: TLS handshake timeout
+model-a055e39a-bc4b-42ce-8757-33aff5e38101: 01:59:08 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1970": net/http: TLS handshake timeout
+controller-0: 01:59:23 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": refreshing application status for "postgresql-test-app": Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app": http2: client connection lost
+model-a055e39a-bc4b-42ce-8757-33aff5e38101: 01:59:32 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1970": net/http: TLS handshake timeout
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
