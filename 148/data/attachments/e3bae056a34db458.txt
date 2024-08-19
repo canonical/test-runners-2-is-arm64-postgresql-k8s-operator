@@ -1,0 +1,54 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model microk8s-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/s3-integrator-32
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/self-signed-certificates-178
+[32mINFO    [0m integration.test_backups:test_backups.py:88 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  03:54:26Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Address  Exposed  Message
+s3-integrator                      error      0/1  s3-integrator             latest/stable   32           no       ensuring the default service "s3-integrator": Timeout: request did not complete within requested timeout - context de...
+self-signed-certificates           waiting    0/1  self-signed-certificates  latest/edge    178           no       installing agent
+
+Unit                        Workload  Agent       Address  Ports  Message
+s3-integrator/0             waiting   allocating                  installing agent
+self-signed-certificates/0  waiting   allocating                  installing agent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 03:54:00 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": setting scale to 1 for "self-signed-certificates": scale patching statefulset "self-signed-certificates": Patch "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates": unexpected EOF
+controller-0: 03:54:05 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": checking if "self-signed-certificates" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:08 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": ensuring application "s3-integrator": ensuring the default service "s3-integrator": Timeout: request did not complete within requested timeout - context deadline exceeded
+controller-0: 03:54:10 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": checking if "self-signed-certificates" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:11 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:13 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": checking if "self-signed-certificates" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:14 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:16 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": checking if "self-signed-certificates" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:17 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:19 ERROR juju.worker.caasapplicationprovisioner.runner exited "self-signed-certificates": checking if "self-signed-certificates" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/self-signed-certificates-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 03:54:20 ERROR juju.worker.caasapplicationprovisioner.runner exited "s3-integrator": checking if "s3-integrator" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/s3-integrator-operator": dial tcp 10.152.183.1:443: connect: connection refused
+
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task was destroyed but it is pending!
+task: <Task pending name='Task-170' coro=<Connection.reconnect() running at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:788> wait_for=<Future finished result=None>>
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-172' coro=<Connection._connect.<locals>._try_endpoint() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:803> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task was destroyed but it is pending!
+task: <Task pending name='Task-171' coro=<Connection.reconnect() running at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:788> wait_for=<Future finished result=None>>
