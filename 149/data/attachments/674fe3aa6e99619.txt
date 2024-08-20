@@ -1,0 +1,29 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  02:04:16Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-k8s                waiting    2/3  postgresql-k8s                      0  10.152.183.207  no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  latest/edge  224  10.152.183.132  no       
+
+Unit                    Workload  Agent       Address       Ports  Message
+postgresql-k8s/0*       error     idle        10.1.147.205         unknown container reason "StartError": failed to create containerd task: failed to create shim task: context canceled...
+postgresql-k8s/1        error     idle        10.1.147.206         unknown container reason "StartError": failed to create containerd task: failed to create shim task: context canceled...
+postgresql-k8s/2        waiting   allocating  10.1.147.207         agent initialising
+postgresql-test-app/0*  active    idle        10.1.147.204         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 02:03:05 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": retrieving application state for "postgresql-test-app": roleBinding resource check: Get "https://10.152.183.1:443/apis/rbac.authorization.k8s.io/v1/namespaces/test/rolebindings/postgresql-test-app": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: read tcp 10.1.147.198:59532->10.152.183.1:443: read: connection reset by peer
+controller-0: 02:03:05 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": reconciling dead unit scale: Get "https://10.152.183.1:443/api/v1/namespaces/test/pods?labelSelector=app.kubernetes.io%2Fname%3Dpostgresql-k8s": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: read tcp 10.1.147.198:59516->10.152.183.1:443: read: connection reset by peer
+controller-0: 02:03:10 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:03:10 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:03:13 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:03:13 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:03:16 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:03:16 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:03:19 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 02:03:19 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
