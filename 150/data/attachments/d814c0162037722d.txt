@@ -1,0 +1,24 @@
+[32mINFO    [0m juju.model:model.py:2098 Deploying local:jammy/postgresql-k8s-3
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  02:57:28Z
+
+App                          Version  Status   Scale  Charm           Channel  Rev  Address         Exposed  Message
+postgresql-k8s               14.12    waiting      3  postgresql-k8s             2  10.152.183.142  no       installing agent
+test-storage-postgresql-k8s           waiting    0/1  postgresql-k8s             3  10.152.183.78   no       installing agent
+
+Unit                           Workload  Agent       Address       Ports  Message
+postgresql-k8s/0*              waiting   idle        10.1.227.220         awaiting for cluster to start
+postgresql-k8s/1               active    idle        10.1.227.221         Primary
+postgresql-k8s/2               active    idle        10.1.227.222         
+test-storage-postgresql-k8s/0  waiting   allocating  10.1.227.224         installing agent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-1: 02:02:53 ERROR unit.postgresql-k8s/1.juju-log Cluster upgrade failed, ensure pre-upgrade checks are ran first.
+unit-postgresql-k8s-0: 02:16:56 ERROR unit.postgresql-k8s/0.juju-log Cluster upgrade failed, ensure pre-upgrade checks are ran first.
+controller-0: 02:41:34 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": cannot scale dying application to 0: application "postgresql-k8s" not found
+unit-postgresql-k8s-1: 02:51:41 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

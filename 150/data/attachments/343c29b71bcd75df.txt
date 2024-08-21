@@ -1,0 +1,369 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model microk8s-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/s3-integrator-32
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/self-signed-certificates-184
+[32mINFO    [0m juju.model:model.py:2098 Deploying local:jammy/postgresql-k8s-0
+[33mWARNING [0m juju.model:model.py:1564 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [allocating] waiting: installing agent
+  postgresql-k8s-aws/1 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [allocating] waiting: agent initialising
+  postgresql-k8s-aws/1 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [executing] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] unknown: 
+  postgresql-k8s-aws/1 [idle] waiting: awaiting for primary endpoint to be ready
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] unknown: 
+  postgresql-k8s-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-k8s-aws/1 [idle] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] waiting: Awaiting restart operation
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] active: 
+[33mWARNING [0m juju.model:model.py:1564 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m integration.helpers:helpers.py:837 configuring S3 integrator for AWS
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [executing] active: Primary
+  s3-integrator/0 [executing] blocked: Missing parameters: ['access-key', 'secret-key']
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] waiting: Awaiting restart operation
+  postgresql-k8s-aws/1 [idle] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] waiting: Awaiting restart operation
+  postgresql-k8s-aws/1 [idle] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] waiting: Awaiting restart operation
+  postgresql-k8s-aws/1 [idle] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [executing] active: 
+  postgresql-k8s-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m integration.helpers:helpers.py:858 creating a table in the database
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  s3-integrator/0 [idle] active: 
+  self-signed-certificates/0 [idle] active: 
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m integration.helpers:helpers.py:869 creating a backup
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  s3-integrator/0 [idle] active: 
+  self-signed-certificates/0 [idle] active: 
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m integration.helpers:helpers.py:878 listing the available backups
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  s3-integrator/0 [idle] active: 
+  self-signed-certificates/0 [idle] active: 
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m integration.helpers:helpers.py:887 creating a second table in the database
+[32mINFO    [0m integration.helpers:helpers.py:894 creating a backup
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  s3-integrator/0 [idle] active: 
+  self-signed-certificates/0 [idle] active: 
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m integration.helpers:helpers.py:905 listing the available backups
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  s3-integrator/0 [idle] active: 
+  self-signed-certificates/0 [idle] active: 
+  postgresql-k8s-aws/0 [idle] active: 
+  postgresql-k8s-aws/1 [idle] active: Primary
+[32mINFO    [0m integration.helpers:helpers.py:914 creating a second table in the database
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws (waiting for exactly 1 units, current : 2)
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s-aws (waiting for exactly 1 units, current : 2)
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-8954' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m integration.test_backups:test_backups.py:88 deleting the previously created backups
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-8957' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-k8s-operator/test-runners-2-is-arm64-postgresql-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  02:07:50Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Address         Exposed  Message
+postgresql-k8s-aws        14.12    waiting    2/1  postgresql-k8s                             0  10.152.183.137  no       installing agent
+s3-integrator                      active       1  s3-integrator             latest/stable   32  10.152.183.190  no       
+self-signed-certificates           active       1  self-signed-certificates  latest/edge    184  10.152.183.43   no       
+
+Unit                         Workload     Agent      Address      Ports  Message
+postgresql-k8s-aws/0         active       executing  10.1.142.12         (leader-settings-changed) 
+postgresql-k8s-aws/1*        maintenance  executing  10.1.142.13         Executing restart operation
+s3-integrator/0*             active       idle       10.1.142.8          
+self-signed-certificates/0*  active       idle       10.1.142.9          
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-aws-0: 02:07:09 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-s3-integrator-0: 02:07:09 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-k8s-aws-1: 02:07:09 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.1.142.13:51480: use of closed network connection
+unit-postgresql-k8s-aws-1: 02:07:09 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-s3-integrator-0: 02:07:09 ERROR juju.worker.uniter resolver loop error: preparing operation "run update-status hook" for s3-integrator/0: connection is shut down
+unit-s3-integrator-0: 02:07:09 ERROR juju.worker.uniter updating agent status: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "not-dead-flag" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "dead-flag" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "hook-retry-strategy" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "api-address-updater" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "proxy-config-updater" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "secret-drain-worker" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+model-8b1e1f6a-64e3-4966-8510-3074970a8240: 02:07:09 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.uniter resolver loop error: preparing operation "run update-status hook" for self-signed-certificates/0: connection is shut down
+unit-self-signed-certificates-0: 02:07:09 ERROR juju.worker.uniter updating agent status: connection is shut down
+model-8b1e1f6a-64e3-4966-8510-3074970a8240: 02:07:09 ERROR juju.worker.dependency "upgrader" manifold worker returned unexpected error: connection is shut down
+model-8b1e1f6a-64e3-4966-8510-3074970a8240: 02:07:09 ERROR juju.worker.dependency "caas-broker-tracker" manifold worker returned unexpected error: connection is shut down
+model-8b1e1f6a-64e3-4966-8510-3074970a8240: 02:07:09 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-k8s-aws-0: 02:07:09 ERROR juju.worker.uniter resolver loop error: preparing operation "run update-status hook" for postgresql-k8s-aws/0: connection is shut down
+unit-postgresql-k8s-aws-0: 02:07:09 ERROR juju.worker.uniter updating agent status: connection is shut down
+model-8b1e1f6a-64e3-4966-8510-3074970a8240: 02:07:12 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "model-8b1e1f6a-64e3-4966-8510-3074970a8240" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-self-signed-certificates-0: 02:07:13 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-self-signed-certificates-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-postgresql-k8s-aws-1: 02:07:13 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-postgresql-k8s-aws-1" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-s3-integrator-0: 02:07:13 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-s3-integrator-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-postgresql-k8s-aws-0: 02:07:13 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-postgresql-k8s-aws-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-postgresql-k8s-aws-1: 02:07:14 ERROR unit.postgresql-k8s-aws/1.juju-log certificates:4: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/model.py", line 3180, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-aws-1/relation-get', '-r', '5', '-', 's3-integrator', '--app', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/postgresql_k8s/v0/postgresql_tls.py", line 122, in _on_tls_relation_broken
+    if not self.charm.update_config():
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/./src/charm.py", line 1654, in update_config
+    self._handle_postgresql_restart_need()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/./src/charm.py", line 1723, in _handle_postgresql_restart_need
+    self.on[self.restart_manager.name].acquire_lock.emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/rolling_ops/v0/rollingops.py", line 399, in _on_acquire_lock
+    self.charm.on[self.name].relation_changed.emit(relation, app=self.charm.app)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/rolling_ops/v0/rollingops.py", line 348, in _on_relation_changed
+    self.charm.on[self.name].process_locks.emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/rolling_ops/v0/rollingops.py", line 384, in _on_process_locks
+    self.charm.on[self.name].run_with_lock.emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/rolling_ops/v0/rollingops.py", line 415, in _on_run_with_lock
+    callback(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/./src/charm.py", line 1564, in _restart
+    self.backup.start_stop_pgbackrest_service()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/src/backups.py", line 993, in start_stop_pgbackrest_service
+    are_backup_settings_ok, _ = self._are_backup_settings_ok()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/src/backups.py", line 87, in _are_backup_settings_ok
+    _, missing_parameters = self._retrieve_s3_parameters()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/src/backups.py", line 949, in _retrieve_s3_parameters
+    s3_parameters = self.s3_client.get_s3_connection_info()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/data_platform_libs/v0/s3.py", line 780, in get_s3_connection_info
+    return self._load_relation_data(relation.data[relation.app])
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/lib/charms/data_platform_libs/v0/s3.py", line 735, in _load_relation_data
+    for key in raw_relation_data:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/model.py", line 838, in __iter__
+    return iter(self._data)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/model.py", line 825, in _data
+    data = self._lazy_data = self._load()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/model.py", line 1700, in _load
+    return self._backend.relation_get(self.relation.id, self._entity.name, self._is_app)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/model.py", line 3257, in relation_get
+    raw_data_content = self._run(*args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-aws-1/charm/venv/ops/model.py", line 3182, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR connection is shut down
+
+unit-postgresql-k8s-aws-1: 02:07:15 ERROR juju.worker.uniter.operation hook "certificates-relation-broken" (via hook dispatching script: dispatch) failed: exit status 1
+model-8b1e1f6a-64e3-4966-8510-3074970a8240: 02:07:16 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "model-8b1e1f6a-64e3-4966-8510-3074970a8240" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-s3-integrator-0: 02:07:16 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-s3-integrator-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-self-signed-certificates-0: 02:07:17 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-self-signed-certificates-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-postgresql-k8s-aws-0: 02:07:17 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-postgresql-k8s-aws-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-postgresql-k8s-aws-1: 02:07:17 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-postgresql-k8s-aws-1" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+model-8b1e1f6a-64e3-4966-8510-3074970a8240: 02:07:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "model-8b1e1f6a-64e3-4966-8510-3074970a8240" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-self-signed-certificates-0: 02:07:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-self-signed-certificates-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-postgresql-k8s-aws-1: 02:07:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-postgresql-k8s-aws-1" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-s3-integrator-0: 02:07:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-s3-integrator-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+unit-postgresql-k8s-aws-0: 02:07:22 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8b1e1f] "unit-postgresql-k8s-aws-0" cannot open api: unable to connect to API: dial tcp 10.152.183.143:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
