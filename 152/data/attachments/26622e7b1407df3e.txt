@@ -1,0 +1,11 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  01:54:10Z
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-1ad6bda0-f999-4e76-8642-2431ec6d74ac: 01:53:42 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1291": net/http: TLS handshake timeout
+model-1ad6bda0-f999-4e76-8642-2431ec6d74ac: 01:53:42 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
