@@ -1,0 +1,127 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  01:54:01Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-k8s       14.12    waiting      3  postgresql-k8s                      0  10.152.183.70   no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  latest/edge  230  10.152.183.253  no       
+
+Unit                    Workload  Agent      Address       Ports  Message
+postgresql-k8s/0        unknown   idle       10.1.128.141         
+postgresql-k8s/1        unknown   idle       10.1.128.142         
+postgresql-k8s/2*       waiting   executing  10.1.128.140         (start) awaiting for primary endpoint to be ready
+postgresql-test-app/0*  active    idle       10.1.128.136         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 01:53:02 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": refreshing application status for "postgresql-k8s": Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: unexpected EOF
+controller-0: 01:53:02 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": refreshing application status for "postgresql-test-app": Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app": dial tcp 10.152.183.1:443: connect: connection refused - error from a previous attempt: unexpected EOF
+controller-0: 01:53:06 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:53:07 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-2: 01:53:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-k8s-0: 01:53:09 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+controller-0: 01:53:11 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:53:11 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+model-86844205-a205-4e6e-82ce-30b5e6f745f7: 01:53:13 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1762": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-test-app-0: 01:53:13 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.1.128.136:47192->10.152.183.86:17070: write: broken pipe: write tcp 10.1.128.136:47192->10.152.183.86:17070: write: broken pipe
+controller-0: 01:53:14 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:53:14 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-0: 01:53:15 ERROR unit.postgresql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 546, in main
+    manager = _Manager(charm_class, use_juju_for_storage=use_juju_for_storage)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 428, in __init__
+    self.framework = self._make_framework(self.dispatcher)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/main.py", line 497, in _make_framework
+    framework = ops.framework.Framework(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 646, in __init__
+    self._stored = typing.cast(StoredStateData, self.load_snapshot(stored_handle))
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/framework.py", line 755, in load_snapshot
+    data = self._storage.load_snapshot(handle.path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/storage.py", line 263, in load_snapshot
+    content = self._backend.get(handle_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/storage.py", line 402, in get
+    p = _run(['state-get', key], stdout=subprocess.PIPE, check=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-0/charm/venv/ops/storage.py", line 48, in _run
+    return subprocess.run([cmd, *args[1:]], encoding='utf-8', **kw)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/var/lib/juju/tools/unit-postgresql-k8s-0/state-get', 'StoredStateData[_stored]']' returned non-zero exit status 1.
+model-86844205-a205-4e6e-82ce-30b5e6f745f7: 01:53:15 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=1762": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:53:17 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": dial tcp 10.152.183.1:443: connect: connection refused
+controller-0: 01:53:17 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-0: 01:53:18 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-1: 01:53:18 ERROR unit.postgresql-k8s/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/observability_libs/v1/kubernetes_service_patch.py", line 277, in _patch
+    if self._is_patched(client):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/observability_libs/v1/kubernetes_service_patch.py", line 309, in _is_patched
+    service = client.get(Service, name=self.service_name, namespace=self._namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/client.py", line 140, in get
+    return self._client.request("get", res=res, name=name, namespace=namespace)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 244, in request
+    resp = self.send(req)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/lightkube/core/generic_client.py", line 216, in send
+    return self._client.send(req, stream=stream)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/httpx/_transports/default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+unit-postgresql-k8s-1: 01:53:19 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
