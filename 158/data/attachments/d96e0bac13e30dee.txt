@@ -1,0 +1,221 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  02:03:53Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address        Exposed  Message
+postgresql-k8s       14.12    waiting      3  postgresql-k8s                      0  10.152.183.74  no       installing agent
+postgresql-test-app           error        1  postgresql-test-app  latest/edge  234  10.152.183.36  no       hook failed: "update-status"
+
+Unit                    Workload  Agent  Address     Ports  Message
+postgresql-k8s/0*       error     idle   10.1.53.16         hook failed: "storage-attached"
+postgresql-k8s/1        error     idle   10.1.53.15         hook failed: "restart-relation-joined"
+postgresql-k8s/2        error     idle   10.1.53.14         hook failed: "database-peers-relation-joined"
+postgresql-test-app/0*  error     idle   10.1.53.12         hook failed: "update-status"
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 01:56:38 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 01:56:45 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 01:56:55 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 01:57:03 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 01:57:11 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 01:57:23 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: cannot resolve "controller-service.controller-microk8s-localhost.svc.cluster.local": lookup controller-service.controller-microk8s-localhost.svc.cluster.local: i/o timeout
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 01:57:30 ERROR juju.worker.dependency "caas-broker-tracker" manifold worker returned unexpected error: cannot create caas broker: unable to determine legacy status for namespace "test": Get "https://10.152.183.1:443/api/v1/namespaces/test": dial tcp 10.152.183.1:443: connect: connection refused
+unit-postgresql-k8s-2: 02:02:14 ERROR unit.postgresql-k8s/2.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/model.py", line 3180, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-2/secret-get', '--label', 'database-peers.postgresql-k8s.app', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 827, in _on_postgresql_pebble_ready
+    self.unit.set_workload_version(self._patroni.rock_postgresql_version)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1334, in _patroni
+    self.get_secret(APP_SCOPE, USER_PASSWORD_KEY),
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 300, in get_secret
+    if result := self.peer_relation_data(scope).fetch_my_relation_field(peers.id, key):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1260, in fetch_my_relation_field
+    if relation_data := self.fetch_my_relation_data([relation_id], [field], relation_name):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1249, in fetch_my_relation_data
+    data[relation.id] = self._fetch_my_specific_relation_data(relation, fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 534, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2083, in _fetch_my_specific_relation_data
+    self.component, self.secret_fields, relation, fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1817, in secret_fields
+    self.static_secret_fields if self.static_secret_fields else self.current_secret_fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1836, in current_secret_fields
+    if content := self._get_group_secret_contents(relation, group):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2070, in _get_group_secret_contents
+    result = super()._get_group_secret_contents(relation, group, secret_fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1000, in _get_group_secret_contents
+    if (secret := self._get_relation_secret(relation.id, group)) and (
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 506, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2059, in _get_relation_secret
+    return self.secrets.get(label, secret_uri, legacy_labels=self._previous_labels())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 706, in get
+    if secret.meta:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 605, in meta
+    self._secret_meta = self._model.get_secret(label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/model.py", line 291, in get_secret
+    content = self._backend.secret_get(id=id, label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/model.py", line 3545, in secret_get
+    result = self._run('secret-get', *args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/model.py", line 3182, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR getting cluster client: unable to determine legacy status for namespace "test": Get "https://10.152.183.1:443/api/v1/namespaces/test": http2: client connection lost
+
+controller-0: 02:02:34 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": refreshing application status for "postgresql-test-app": Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app": http2: client connection lost
+unit-postgresql-k8s-2: 02:02:38 ERROR juju.worker.uniter.operation hook "database-peers-relation-joined" (via hook dispatching script: dispatch) failed: exit status 1
+controller-0: 02:02:39 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": refreshing application status for "postgresql-k8s": Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s": http2: client connection lost
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:02:56 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2175": net/http: TLS handshake timeout
+controller-0: 02:03:06 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-k8s": checking if "postgresql-k8s" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-k8s-operator": net/http: TLS handshake timeout
+controller-0: 02:03:06 ERROR juju.worker.caasapplicationprovisioner.runner exited "postgresql-test-app": checking if "postgresql-test-app" has an operator pod due to upgrading the charm from a pod-spec charm to a sidecar charm: Get "https://10.152.183.1:443/apis/apps/v1/namespaces/test/statefulsets/postgresql-test-app-operator": net/http: TLS handshake timeout
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:09 ERROR juju.kubernetes.klog /build/snapcraft-juju-c90e67be988b0e4d002ce9f34fba0b99/parts/jujud/build/worker/caasrbacmapper/mapper.go:79: Failed to watch *v1.ServiceAccount: failed to list *v1.ServiceAccount: Get "https://10.152.183.1:443/api/v1/namespaces/test/serviceaccounts?resourceVersion=2175": net/http: TLS handshake timeout
+unit-postgresql-k8s-2: 02:03:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: read tcp 10.1.53.14:35646->10.152.183.100:17070: read: connection reset by peer
+unit-postgresql-test-app-0: 02:03:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: read tcp 10.1.53.12:39554->10.152.183.100:17070: read: connection reset by peer
+unit-postgresql-k8s-0: 02:03:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-test-app-0: 02:03:18 ERROR juju.worker.uniter updating agent status: connection is shut down
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:18 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.1.53.9:40660: use of closed network connection
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:18 ERROR juju.worker.dependency "upgrader" manifold worker returned unexpected error: connection is shut down
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:18 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: connection is shut down
+unit-postgresql-k8s-1: 02:03:18 ERROR juju.worker.dependency "not-dead-flag" manifold worker returned unexpected error: connection is shut down
+unit-postgresql-k8s-1: 02:03:18 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: connection is shut down
+unit-postgresql-k8s-1: 02:03:18 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: connection is shut down
+unit-postgresql-k8s-1: 02:03:18 ERROR juju.worker.dependency "dead-flag" manifold worker returned unexpected error: connection is shut down
+unit-postgresql-k8s-1: 02:03:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-k8s-1: 02:03:19 ERROR unit.postgresql-k8s/1.juju-log restart:2: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 3180, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-postgresql-k8s-1/secret-get', '--label', 'database-peers.postgresql-k8s.unit', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 546, in main
+    manager = _Manager(charm_class, use_juju_for_storage=use_juju_for_storage)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 429, in __init__
+    self.charm = self._make_charm(self.framework, self.dispatcher)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/main.py", line 432, in _make_charm
+    charm = self._charm_class(framework)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 376, in wrap_init
+    original_init(self, framework, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 201, in __init__
+    jobs=self._generate_metrics_jobs(self.is_tls_enabled),
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 1355, in is_tls_enabled
+    return all(self.tls.get_tls_files())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/postgresql_k8s/v0/postgresql_tls.py", line 216, in get_tls_files
+    chain = self.charm.get_secret(SCOPE, "chain")
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/./src/charm.py", line 303, in get_secret
+    return self.peer_relation_data(scope).get_secret(peers.id, secret_key)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 519, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1876, in get_secret
+    and field not in self.current_secret_fields
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1836, in current_secret_fields
+    if content := self._get_group_secret_contents(relation, group):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2070, in _get_group_secret_contents
+    result = super()._get_group_secret_contents(relation, group, secret_fields)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 1000, in _get_group_secret_contents
+    if (secret := self._get_relation_secret(relation.id, group)) and (
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 506, in wrapper
+    return f(self, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 2059, in _get_relation_secret
+    return self.secrets.get(label, secret_uri, legacy_labels=self._previous_labels())
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 706, in get
+    if secret.meta:
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/lib/charms/data_platform_libs/v0/data_interfaces.py", line 605, in meta
+    self._secret_meta = self._model.get_secret(label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 291, in get_secret
+    content = self._backend.secret_get(id=id, label=label)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 3545, in secret_get
+    result = self._run('secret-get', *args, return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-1/charm/venv/ops/model.py", line 3182, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR connection is shut down
+
+unit-postgresql-k8s-2: 02:03:19 ERROR unit.postgresql-k8s/2.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/./src/charm.py", line 1837, in <module>
+    main(PostgresqlOperatorCharm, use_juju_for_storage=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 546, in main
+    manager = _Manager(charm_class, use_juju_for_storage=use_juju_for_storage)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 428, in __init__
+    self.framework = self._make_framework(self.dispatcher)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/main.py", line 497, in _make_framework
+    framework = ops.framework.Framework(
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 646, in __init__
+    self._stored = typing.cast(StoredStateData, self.load_snapshot(stored_handle))
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/framework.py", line 755, in load_snapshot
+    data = self._storage.load_snapshot(handle.path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/storage.py", line 263, in load_snapshot
+    content = self._backend.get(handle_path)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/storage.py", line 402, in get
+    p = _run(['state-get', key], stdout=subprocess.PIPE, check=True)
+  File "/var/lib/juju/agents/unit-postgresql-k8s-2/charm/venv/ops/storage.py", line 48, in _run
+    return subprocess.run([cmd, *args[1:]], encoding='utf-8', **kw)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/var/lib/juju/tools/unit-postgresql-k8s-2/state-get', 'StoredStateData[_stored]']' returned non-zero exit status 1.
+unit-postgresql-k8s-1: 02:03:19 ERROR juju.worker.uniter.operation hook "restart-relation-joined" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-2: 02:03:19 ERROR juju.worker.uniter.operation hook "database-peers-relation-joined" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-k8s-2: 02:03:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-0: 02:03:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:03:22 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:22 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:03:23 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-0: 02:03:25 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:03:25 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:03:25 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:26 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:03:26 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-0: 02:03:30 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:03:30 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:03:30 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:30 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:03:31 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:03:35 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-0: 02:03:35 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:03:35 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:36 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:03:37 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-0: 02:03:41 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-1: 02:03:41 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-2: 02:03:41 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+model-8a152048-f6bf-4f5b-85f6-f69915a9600a: 02:03:42 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "model-8a152048-f6bf-4f5b-85f6-f69915a9600a" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-test-app-0: 02:03:43 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8a1520] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.100:17070: connect: connection refused
+unit-postgresql-k8s-0: 02:03:44 ERROR juju.worker.uniter.operation after executing operation "run storage-attached (pgdata/0) hook" for postgresql-k8s/0 for postgresql-k8s/0: writing state: connection is shut down
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
