@@ -1,0 +1,46 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.4    unsupported  01:55:55Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+postgresql-k8s       14.12    waiting      3  postgresql-k8s                      0  10.152.183.193  no       installing agent
+postgresql-test-app           active       1  postgresql-test-app  latest/edge  236  10.152.183.28   no       
+
+Unit                    Workload  Agent      Address     Ports  Message
+postgresql-k8s/0        unknown   idle       10.1.53.13         
+postgresql-k8s/1        unknown   idle       10.1.53.12         
+postgresql-k8s/2*       waiting   executing  10.1.53.14         (start) awaiting for primary endpoint to be ready
+postgresql-test-app/0*  active    idle       10.1.53.8          
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-k8s-2: 01:54:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-k8s-1: 01:54:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-test-app-0: 01:54:53 ERROR juju.worker.dependency "dead-flag" manifold worker returned unexpected error: connection is shut down
+model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7: 01:54:53 ERROR juju.worker.dependency "upgrader" manifold worker returned unexpected error: connection is shut down
+unit-postgresql-k8s-1: 01:54:53 ERROR juju.worker.uniter resolver loop error: preparing operation "run update-status hook" for postgresql-k8s/1: connection is shut down
+unit-postgresql-k8s-1: 01:54:53 ERROR juju.worker.uniter updating agent status: connection is shut down
+model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7: 01:54:53 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: connection is shut down
+unit-postgresql-test-app-0: 01:54:53 ERROR juju.worker.uniter resolver loop error: preparing operation "run update-status hook" for postgresql-test-app/0: getting unit payloads: connection is shut down
+unit-postgresql-test-app-0: 01:54:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-test-app-0: 01:54:53 ERROR juju.worker.uniter updating agent status: connection is shut down
+model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7: 01:54:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-k8s-2: 01:54:53 ERROR juju.worker.uniter.operation after executing operation "run start hook" for postgresql-k8s/2 for postgresql-k8s/2: writing state: connection is shut down
+unit-postgresql-k8s-0: 01:54:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-k8s-0: 01:54:53 ERROR juju.worker.uniter resolver loop error: preparing operation "run update-status hook" for postgresql-k8s/0: connection is shut down
+unit-postgresql-k8s-0: 01:54:53 ERROR juju.worker.uniter updating agent status: connection is shut down
+unit-postgresql-k8s-2: 01:54:55 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7: 01:54:56 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-k8s-1: 01:54:57 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-test-app-0: 01:54:57 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-k8s-0: 01:54:57 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-k8s-2: 01:55:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7: 01:55:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-k8s-1: 01:55:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-k8s-1" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-test-app-0: 01:55:01 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-test-app-0" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-k8s-0: 01:55:01 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-k8s-0" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+unit-postgresql-k8s-2: 01:55:04 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "unit-postgresql-k8s-2" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7: 01:55:04 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [2f3c4e] "model-2f3c4ec2-ffec-4f6c-86d3-eda1c3aecba7" cannot open api: unable to connect to API: dial tcp 10.152.183.103:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
