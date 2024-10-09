@@ -1,0 +1,24 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.5    unsupported  01:55:34Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+another-database              waiting      3  postgresql-k8s                      0  10.152.183.240  no       installing agent
+database                      waiting      3  postgresql-k8s                      1  10.152.183.102  no       installing agent
+postgresql-test-app           active       2  postgresql-test-app  latest/edge  257  10.152.183.239  no       
+
+Unit                    Workload  Agent      Address     Ports  Message
+another-database/0      unknown   idle       10.1.53.13         
+another-database/1      unknown   idle       10.1.53.14         
+another-database/2*     waiting   executing  10.1.53.15         awaiting for primary endpoint to be ready
+database/0              unknown   idle       10.1.53.19         
+database/1*             waiting   executing  10.1.53.20         awaiting for primary endpoint to be ready
+database/2              unknown   idle       10.1.53.21         
+postgresql-test-app/0*  active    idle       10.1.53.9          
+postgresql-test-app/1   active    idle       10.1.53.8          
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
