@@ -1,0 +1,98 @@
+[32mINFO    [0m integration.test_charm:test_charm.py:274 connecting to primary postgresql-k8s/1 on 10.1.53.13
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] terminated: 
+  postgresql-k8s/1 [idle] terminated: 
+  postgresql-k8s/2 [idle] terminated: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [allocating] waiting: agent initialising
+  postgresql-k8s/1 [allocating] waiting: agent initialising
+  postgresql-k8s/2 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [executing] unknown: 
+  postgresql-k8s/1 [executing] waiting: awaiting for cluster to start
+  postgresql-k8s/2 [executing] unknown: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [executing] unknown: 
+  postgresql-k8s/1 [executing] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/2 [executing] unknown: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] unknown: 
+  postgresql-k8s/1 [executing] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/2 [idle] unknown: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] unknown: 
+  postgresql-k8s/1 [idle] waiting: awaiting for primary endpoint to be ready
+  postgresql-k8s/2 [idle] unknown: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] unknown: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] unknown: 
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  postgresql-k8s/1 [executing] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  postgresql-k8s/1 [idle] maintenance: reconfiguring cluster
+  postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] waiting: awaiting for cluster to start
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2972 Waiting for model:
+  postgresql-k8s/0 [idle] active: 
+  postgresql-k8s/1 [idle] active: Primary
+  postgresql-k8s/2 [idle] active: 
+[32mINFO    [0m integration.test_charm:test_charm.py:289 connecting to the database host: 10.1.53.18
+[32mINFO    [0m integration.test_charm:test_charm.py:289 connecting to the database host: 10.1.53.20
+[32mINFO    [0m integration.test_charm:test_charm.py:289 connecting to the database host: 10.1.53.19
