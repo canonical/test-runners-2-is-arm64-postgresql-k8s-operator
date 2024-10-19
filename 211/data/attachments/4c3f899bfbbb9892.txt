@@ -1,0 +1,59 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.5    unsupported  01:58:21Z
+
+App                      Version  Status   Scale  Charm                Channel        Rev  Address         Exposed  Message
+another-application               active       1  postgresql-test-app  latest/edge    268  10.152.183.102  no       received database credentials of the first database
+another-data-integrator           waiting      1  data-integrator      latest/stable   40  10.152.183.230  no       installing agent
+another-database         14.13    active       3  postgresql-k8s                        0  10.152.183.49   no       
+data-integrator                   waiting      1  data-integrator      latest/stable   40  10.152.183.52   no       installing agent
+database                 14.13    active       3  postgresql-k8s                        1  10.152.183.18   no       
+postgresql-test-app               active       2  postgresql-test-app  latest/edge    268  10.152.183.195  no       received database credentials of the first database
+
+Unit                        Workload  Agent  Address     Ports  Message
+another-application/0*      active    idle   10.1.53.22         received database credentials of the first database
+another-data-integrator/0*  blocked   idle   10.1.53.26         Please relate the data-integrator with the desired product
+another-database/0*         active    idle   10.1.53.16         Primary
+another-database/1          active    idle   10.1.53.18         
+another-database/2          active    idle   10.1.53.17         
+data-integrator/0*          blocked   idle   10.1.53.25         Please relate the data-integrator with the desired product
+database/0*                 active    idle   10.1.53.19         Primary
+database/1                  active    idle   10.1.53.24         
+database/2                  active    idle   10.1.53.23         
+postgresql-test-app/0       active    idle   10.1.53.8          received database credentials of the first database
+postgresql-test-app/1*      active    idle   10.1.53.9          received database credentials of the first database
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+unit-another-database-1: 01:39:45 ERROR unit.another-database/1.juju-log pgdata folder not found in /var/lib/postgresql/data/pgdata
+unit-database-2: 01:41:36 ERROR unit.database/2.juju-log pgdata folder not found in /var/lib/postgresql/data/pgdata
+unit-another-database-2: 01:41:54 ERROR unit.another-database/2.juju-log pgdata folder not found in /var/lib/postgresql/data/pgdata
+unit-database-0: 01:47:57 ERROR unit.database/0.juju-log Kubernetes service get failed: services "database" not found
+unit-database-0: 01:47:57 ERROR unit.database/0.juju-log Kubernetes service patch failed: services "database" not found
+unit-database-0: 01:48:08 ERROR unit.database/0.juju-log Kubernetes service get failed: services "database" not found
+unit-database-0: 01:48:08 ERROR unit.database/0.juju-log Kubernetes service patch failed: services "database" not found
+unit-database-0: 01:48:16 ERROR unit.database/0.juju-log Kubernetes service get failed: services "database" not found
+unit-database-0: 01:48:16 ERROR unit.database/0.juju-log Kubernetes service patch failed: services "database" not found
+unit-database-0: 01:57:13 ERROR unit.database/0.juju-log database:20: Invalid extra user roles: test
+unit-database-0: 01:57:13 ERROR unit.database/0.juju-log database:20: invalid role(s) for extra user roles
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-0/charm/src/relations/postgresql_provider.py", line 92, in _on_database_requested
+    self.charm.postgresql.create_user(user, password, extra_user_roles=extra_user_roles)
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 244, in create_user
+    raise PostgreSQLCreateUserError(INVALID_EXTRA_USER_ROLE_BLOCKING_MESSAGE)
+charms.postgresql_k8s.v0.postgresql.PostgreSQLCreateUserError: invalid role(s) for extra user roles
+unit-database-0: 01:57:16 ERROR unit.database/0.juju-log database:21: Invalid extra user roles: test
+unit-database-0: 01:57:16 ERROR unit.database/0.juju-log database:21: invalid role(s) for extra user roles
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-0/charm/src/relations/postgresql_provider.py", line 92, in _on_database_requested
+    self.charm.postgresql.create_user(user, password, extra_user_roles=extra_user_roles)
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 244, in create_user
+    raise PostgreSQLCreateUserError(INVALID_EXTRA_USER_ROLE_BLOCKING_MESSAGE)
+charms.postgresql_k8s.v0.postgresql.PostgreSQLCreateUserError: invalid role(s) for extra user roles
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
