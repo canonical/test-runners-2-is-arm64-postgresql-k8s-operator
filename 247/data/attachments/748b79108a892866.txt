@@ -1,0 +1,27 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.5    unsupported  01:55:52Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Address         Exposed  Message
+another-database     14.13    waiting      3  postgresql-k8s                      1  10.152.183.44   no       installing agent
+database             14.13    waiting      3  postgresql-k8s                      0  10.152.183.220  no       installing agent
+postgresql-test-app           active       2  postgresql-test-app  latest/edge  286  10.152.183.249  no       
+
+Unit                    Workload     Agent  Address     Ports  Message
+another-database/0*     active       idle   10.1.53.19         Primary
+another-database/1      unknown      idle   10.1.53.21         
+another-database/2      unknown      idle   10.1.53.20         
+database/0              unknown      idle   10.1.53.15         
+database/1              unknown      idle   10.1.53.17         
+database/2*             maintenance  idle   10.1.53.16         reconfiguring cluster
+postgresql-test-app/0*  active       idle   10.1.53.8          
+postgresql-test-app/1   active       idle   10.1.53.9          
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+unit-another-database-2: 01:54:30 ERROR unit.another-database/2.juju-log pgdata folder not found in /var/lib/postgresql/data/pgdata
+unit-another-database-0: 01:54:36 ERROR unit.another-database/0.juju-log pgdata folder not found in /var/lib/postgresql/data/pgdata
+unit-database-2: 01:54:52 ERROR unit.database/2.juju-log pgdata folder not found in /var/lib/postgresql/data/pgdata
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
